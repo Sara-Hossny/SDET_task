@@ -39,14 +39,12 @@ jobs:
             npx nightwatch --config nightwatch.conf.js || true
 
       - store_artifacts:
-          path: UItest/tests_output/nightwatch-html-report
+          path: ~/project/UItest/tests_output/nightwatch-html-report
           destination: nightwatch-report
 
   test-API:
     executor: node-executor
     working_directory: ~/project/Mock_user_Auth_Supertest-main
-    environment:
-      JEST_JUNIT_OUTPUT_DIR: ./mock_user_authentication_API/Testing_supertest/test-results/
     steps:
       - checkout:
           path: ~/project
@@ -76,8 +74,9 @@ jobs:
             npm install jest-junit
             npm run test --ci --runInBand --reporters=default --reporters=jest-junit || true
 
-      - store_test_results:
-          path: mock_user_authentication_API/Testing_supertest/test-results/
+      - store_artifacts:
+          path: ~/project/Mock_user_Auth_Supertest-main/Testing_supertest/reports/test-report.html
+          destination: test-report.html
 
 
 workflows:
