@@ -10,22 +10,22 @@ executors:
 
 jobs:
   test-UI:
-    executor: node/default
-    working_directory: ~/project/UItest
-    steps:
-      - checkout:
-          path: ~/project
+  executor: node/default
+  working_directory: ~/project/UItest
+  steps:
+    - checkout:
+        path: ~/project
 
-      - node/install-packages:
-          pkg-manager: npm
+    - node/install-packages:
+        pkg-manager: npm
 
-      - run:
-          name: Install test dependencies
-          command: npm install
+    - run:
+        name: Install test dependencies
+        command: npm install
 
-      - run:
-          name: Run Nightwatch tests
-          command: npx nightwatch --config nightwatch.conf.js
+    - run:
+        name: Run Nightwatch tests
+        command: npx nightwatch --config nightwatch.conf.js
 
 
   test-API:
