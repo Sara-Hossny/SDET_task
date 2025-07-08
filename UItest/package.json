@@ -6,6 +6,10 @@
   "scripts": {
     "test": "nightwatch --config nightwatch.conf.js"
   },
+  "devDependencies": {
+  "nightwatch": "^3.0.0"
+}
+,
   "author": "Sara Hossny",
   "license": "ISC"
 }
