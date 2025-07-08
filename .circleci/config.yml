@@ -1,34 +1,71 @@
-# This config was automatically generated from your source code
-# Stacks detected: deps:node:UItest
 version: 2.1
+
 orbs:
   node: circleci/node@5
+
+executors:
+  node-executor:
+    docker:
+      - image: cimg/node:18.17
+
 jobs:
-  test-node:
-    # Install node dependencies and run tests
+  test-UI:
     executor: node/default
     working_directory: ~/project/UItest
     steps:
       - checkout:
           path: ~/project
+
       - node/install-packages:
           pkg-manager: npm
+
       - run:
-          name: Run tests
-          command: npm test --passWithNoTests
-  deploy:
-    # This is an example deploy job, not actually used by the workflow
-    docker:
-      - image: cimg/base:stable
+          name: Install test dependencies
+          command: npm install
+
+      - run:
+          name: Run Nightwatch tests
+          command: npx nightwatch --config nightwatch.conf.js
+
+
+  test-API:
+    executor: node-executor
+    working_directory: ~/project/Mock_user_Auth_Supertest-main
+    environment:
+      JEST_JUNIT_OUTPUT_DIR: ./Testing_supertest/test-results/
     steps:
-      # Replace this with steps to deploy to users
+      - checkout
+
       - run:
-          name: deploy
-          command: '#e.g. ./deploy.sh'
+          name: Install server dependencies
+          working_directory: mock_user_authentication_API
+          command: npm install
+
+      - run:
+          name: Start server in background
+          working_directory: mock_user_authentication_API
+          command: |
+            npm run dev 8080 
+            sleep 60
+          background: true
+
+      - run:
+          name: Install test dependencies
+          working_directory: Testing_supertest
+          command: npm install
+
+      - run:
+          name: Run tests with jest-junit
+          working_directory: Testing_supertest
+          command: |
+            npm install jest-junit
+            npm run test --ci --runInBand --reporters=default --reporters=jest-junit
+
+      - store_test_results:
+          path: Testing_supertest/test-results/
+
 workflows:
   build-and-test:
     jobs:
-      - test-node
-    # - deploy:
-    #     requires:
-    #       - test-node
+      - test-UI
+      - test-API
