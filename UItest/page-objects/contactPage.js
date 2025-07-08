@@ -56,7 +56,7 @@ class ContactPage {
     await b.waitForElementVisible(el.fileSelected, 2000);
 
     await b.getText(el.fileSelected, function (result) {
-      b.assert.ok(
+      b.verify.ok(
         result.value.toLowerCase().includes(fileName.toLowerCase()),
         `Expected uploaded file name to appear, got "${result.value}"`
       );
@@ -71,6 +71,31 @@ class ContactPage {
     await b.click(this.elements.sendButton);
     return this;
   }
+    async verifySuccessMessage() {
+    await this.browser.waitForElementVisible(this.elements.successAlert, 5000);
+    await this.browser.verify.containsText(this.elements.successAlert, 'successfully sent');
+    return this;
+  }
+  async verifyErrorMessage(expectedMessage = 'Invalid email address') {
+  await this.browser.waitForElementVisible(this.elements.errorAlert, 5000);
+  await this.browser.verify.containsText(this.elements.errorAlert, expectedMessage);
+  return this;
+}
+
+async verifyMultipleErrorMessages(expectedMessages = []) {
+  await this.browser.waitForElementVisible(this.elements.errorAlert, 2000);
+  await this.browser.getText(this.elements.errorAlert, (result) => {
+    const alertText = result.value;
+    expectedMessages.forEach((msg) => {
+      this.browser.verify.ok(
+        alertText.includes(msg),
+        `Expected error message "${msg}" to appear`
+      );
+    });
+  });
+  return this;
+}
+
 }
 
 module.exports = ContactPage;

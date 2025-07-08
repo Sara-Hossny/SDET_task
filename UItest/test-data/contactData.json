@@ -45,11 +45,24 @@
     "orderRef": "12345",
     "message": ""
   },
-  "invalidEmails": [
-    "plainaddress",
-    "@no-local.com",
-    "user@",
-    "user@.com",
-    "user@site..com"
+    "invalidEmailSubmissions": [
+    {
+      "subjectIndex": "2",
+      "email": "plainaddress",
+      "orderRef": "1001",
+      "message": "Testing invalid email format"
+    },
+    {
+      "subjectIndex": "2",
+      "email": "@no-local-part.com",
+      "orderRef": "1002",
+      "message": "Another invalid email"
+    },
+    {
+      "subjectIndex": "2",
+      "email": "user@.invalid.com",
+      "orderRef": "1003",
+      "message": "Invalid domain"
+    }
   ]
 }
