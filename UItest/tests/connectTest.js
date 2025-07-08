@@ -9,85 +9,78 @@ describe('Contact Form Tests', function () {
     await page.navigate();
   });
 
-  it('Valid Contact Form Submission', async function (browser) {
-    await page.submitForm(contactData.validSubmission);
-    await browser.waitForElementVisible(page.elements.successAlert, 5000);
-    await browser.verify.containsText(page.elements.successAlert, 'successfully sent');
+  it('Valid Contact Form Submission', async function () {
+    await page
+      .submitForm(contactData.validSubmission)
+      .verifySuccessMessage();
   });
 
-  it('Missing Email - Should Show Error', async function (browser) {
-    await page.submitForm(contactData.missingEmail);
-    await browser.waitForElementVisible(page.elements.errorAlert, 5000);
-    await browser.verify.containsText(page.elements.errorAlert, 'Invalid email address');
+  it('Missing Email - Should Show Error', async function () {
+    await page
+      .submitForm(contactData.missingEmail)
+      .verifyErrorMessage('Invalid email address');
   });
 
-  it('Missing Message - Should Show Error', async function (browser) {
-    await page.submitForm(contactData.missingMessage);
-    await browser.waitForElementVisible(page.elements.errorAlert, 5000);
-    await browser.verify.containsText(page.elements.errorAlert, 'The message cannot be blank');
+  it('Missing Message - Should Show Error', async function () {
+    await page
+      .submitForm(contactData.missingMessage)
+      .verifyErrorMessage('The message cannot be blank');
   });
 
-  it('No Subject Selected - Should Show Error', async function (browser) {
-    await page.submitForm(contactData.missingSubject);
-    await browser.waitForElementVisible(page.elements.errorAlert, 5000);
-    await browser.verify.containsText(page.elements.errorAlert, 'Please select a subject');
+  it('No Subject Selected - Should Show Error', async function () {
+    await page
+      .submitForm(contactData.missingSubject)
+      .verifyErrorMessage('Please select a subject');
   });
 
-  it('File name appears after upload', async function (browser) {
+  it('File name appears after upload', async function () {
     await page.uploadFileAndCheckName(contactData.validSubmission.fileName);
   });
 
-  it('Submit empty form and check multiple error messages', async function (browser) {
-    await page.submitEmptyForm();
-    await browser.waitForElementVisible(page.elements.errorAlert, 2000);
-
-    await browser.getText(page.elements.errorAlert, function (result) {
-      const text = result.value;
-      browser.verify.ok(text.includes('Invalid email address'));
-      browser.verify.ok(text.includes('The message cannot be blank'));
-      browser.verify.ok(text.includes('Please select a subject'));
-    });
+  it('Submit empty form and check multiple error messages', async function () {
+    await page
+      .submitEmptyForm()
+      .verifyMultipleErrorMessages([
+        'Invalid email address',
+        'The message cannot be blank',
+        'Please select a subject',
+      ]);
   });
 
-  it('Missing Email + Subject', async function (browser) {
-    await page.submitForm(contactData.missingEmailAndSubject);
-    await browser.waitForElementVisible(page.elements.errorAlert, 2000);
-    await browser.getText(page.elements.errorAlert, function (result) {
-      browser.verify.ok(result.value.includes('Invalid email address'));
-      browser.verify.ok(result.value.includes('Please select a subject'));
-    });
+  it('Missing Email + Subject', async function () {
+    await page
+      .submitForm(contactData.missingEmailAndSubject)
+      .verifyMultipleErrorMessages([
+        'Invalid email address',
+        'Please select a subject',
+      ]);
   });
 
-  it('Missing Email + Message', async function (browser) {
-    await page.submitForm(contactData.missingEmailAndMessage);
-    await browser.waitForElementVisible(page.elements.errorAlert, 2000);
-    await browser.getText(page.elements.errorAlert, function (result) {
-      browser.verify.ok(result.value.includes('Invalid email address'));
-      browser.verify.ok(result.value.includes('The message cannot be blank'));
-    });
+  it('Missing Email + Message', async function () {
+    await page
+      .submitForm(contactData.missingEmailAndMessage)
+      .verifyMultipleErrorMessages([
+        'Invalid email address',
+        'The message cannot be blank',
+      ]);
   });
 
-  it('Missing Subject + Message', async function (browser) {
-    await page.submitForm(contactData.missingSubjectAndMessage);
-    await browser.waitForElementVisible(page.elements.errorAlert, 2000);
-    await browser.getText(page.elements.errorAlert, function (result) {
-      browser.verify.ok(result.value.includes('Please select a subject'));
-      browser.verify.ok(result.value.includes('The message cannot be blank'));
-    });
+  it('Missing Subject + Message', async function () {
+    await page
+      .submitForm(contactData.missingSubjectAndMessage)
+      .verifyMultipleErrorMessages([
+        'Please select a subject',
+        'The message cannot be blank',
+      ]);
   });
 
-  it('Invalid Email Addresses - Should Show Error', async function (browser) {
-    for (const email of contactData.invalidEmails) {
-      await page.submitForm({
-        ...contactData.validSubmission,
-        email,
-        message: 'Testing invalid email'
-      });
-
-      await browser.waitForElementVisible(page.elements.errorAlert, 2000);
-      await browser.verify.containsText(page.elements.errorAlert, 'Invalid email address');
-    }
-  });
+ it('Invalid Email Addresses - Should Show Error', async function () {
+  for (const submission of contactData.invalidEmailSubmissions) {
+    await page
+      .submitForm(submission)
+      .verifyErrorMessage('Invalid email address');
+  }
+});
 
   after(function (browser) {
     browser.end();
