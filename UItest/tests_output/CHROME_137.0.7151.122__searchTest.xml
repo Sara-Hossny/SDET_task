@@ -5,9 +5,9 @@
 
   <testsuite name="Search Feature" id="searchTest"
     errors="0" failures="2" hostname="" package="searchTest" skipped="0"
-    tests="1" time="9.295" timestamp="">
+    tests="1" time="8.187" timestamp="">
   
-    <testcase name="Search for &#34;dress&#34; and verify result contains &#34;dress&#34;" classname="Search Feature" time="9.221" assertions="9">
+    <testcase name="Search for &#34;dress&#34; and verify result contains &#34;dress&#34;" classname="Search Feature" time="8.115" assertions="9">
 
     
 
@@ -21,122 +21,16 @@
 
     
 
-      <failure message="Failed [ok]: (Product 6 should contain &#34;dress&#34; (case-insensitive). Found: &#34;Faded Short Sleeves T-shirt&#34;) - expected &#34;true&#34; but got: &#34;false&#34; (11ms)">    at HomePage.verifyProductName (D:\sr\New folder (2)\SDET_task\UItest\page-objects\homePage.js:46:14)
+      <failure message="Failed [ok]: (Product 6 should contain &#34;dress&#34; (case-insensitive). Found: &#34;Faded Short Sleeves T-shirt&#34;) - expected &#34;true&#34; but got: &#34;false&#34; (9ms)">    at HomePage.verifyProductName (D:\sr\New folder (2)\SDET_task\UItest\page-objects\homePage.js:46:14)
     at async DescribeInstance.&lt;anonymous&gt; (D:\sr\New folder (2)\SDET_task\UItest\tests\searchTest.js:16:7)</failure>
 
-      <failure message="Failed [ok]: (Product 7 should contain &#34;dress&#34; (case-insensitive). Found: &#34;Blouse&#34;) - expected &#34;true&#34; but got: &#34;false&#34; (6ms)">    at HomePage.verifyProductName (D:\sr\New folder (2)\SDET_task\UItest\page-objects\homePage.js:46:14)
+      <failure message="Failed [ok]: (Product 7 should contain &#34;dress&#34; (case-insensitive). Found: &#34;Blouse&#34;) - expected &#34;true&#34; but got: &#34;false&#34; (4ms)">    at HomePage.verifyProductName (D:\sr\New folder (2)\SDET_task\UItest\page-objects\homePage.js:46:14)
     at async DescribeInstance.&lt;anonymous&gt; (D:\sr\New folder (2)\SDET_task\UItest\tests\searchTest.js:16:7)</failure>
 
     
     </testcase>
   
 
-  
-    <system-err>
-       NoSuchElementError
-   An error occurred while running .setValue() command on &lt;#email&gt;: Timed out while waiting for element &#34;#email&#34; with &#34;css selector&#34; to be present for 5000 milliseconds.
-    {&#34;value&#34;:null,&#34;status&#34;:0}
-
-    Try fixing by :
-    1. Please inspect the html before the step
-    2. Verify if an element with the mentioned selector is present in the DOM tree
-
-    Error location:
-    D:\sr\New folder (2)\SDET_task\UItest\page-objects\contactPage.js:36
-    –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-     34 |       
-     35 |     };
-     36 |     if (email) await b.setValue(el.emailAddress, email); 
-     37 |     if (orderRef) await b.setValue(el.orderReference, orderRef);
-     38 |     if (message) await b.setValue(el.message, message);
-    –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-
- NoSuchElementError
-   An error occurred while running .setValue() command on &lt;#id_order&gt;: Timed out while waiting for element &#34;#id_order&#34; with &#34;css selector&#34; to be present for 5000 milliseconds.
-    {&#34;value&#34;:null,&#34;status&#34;:0}
-
-    Try fixing by :
-    1. Please inspect the html before the step
-    2. Verify if an element with the mentioned selector is present in the DOM tree
-
-    Error location:
-    D:\sr\New folder (2)\SDET_task\UItest\page-objects\contactPage.js:37
-    –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-     35 |     };
-     36 |     if (email) await b.setValue(el.emailAddress, email);
-     37 |     if (orderRef) await b.setValue(el.orderReference, orderRef); 
-     38 |     if (message) await b.setValue(el.message, message);
-     39 | 
-    –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-
- NoSuchElementError
-   An error occurred while running .setValue() command on &lt;#message&gt;: Timed out while waiting for element &#34;#message&#34; with &#34;css selector&#34; to be present for 5000 milliseconds.
-    {&#34;value&#34;:null,&#34;status&#34;:0}
-
-    Try fixing by :
-    1. Please inspect the html before the step
-    2. Verify if an element with the mentioned selector is present in the DOM tree
-
-    Error location:
-    D:\sr\New folder (2)\SDET_task\UItest\page-objects\contactPage.js:38
-    –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-     36 |     if (email) await b.setValue(el.emailAddress, email);
-     37 |     if (orderRef) await b.setValue(el.orderReference, orderRef);
-     38 |     if (message) await b.setValue(el.message, message); 
-     39 | 
-     40 |     if (fileName) {
-    –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-
- NoSuchElementError
-   An error occurred while running .uploadFile() command on &lt;#fileUpload&gt;: Timed out while waiting for element &#34;#fileUpload&#34; with &#34;css selector&#34; to be present for 5000 milliseconds.
-    {&#34;value&#34;:null,&#34;status&#34;:0}
-
-    Try fixing by :
-    1. Please inspect the html before the step
-    2. Verify if an element with the mentioned selector is present in the DOM tree
-
-    Error location:
-    D:\sr\New folder (2)\SDET_task\UItest\page-objects\contactPage.js:42
-    –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-     40 |     if (fileName) {
-     41 |       const absPath = path.resolve(__dirname, `../test-data/${fileName}`);
-     42 |       await b.uploadFile(el.fileUpload, absPath); 
-     43 |       await b.waitForElementVisible(el.fileSelected, 2000);
-     44 |     }
-    –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-
- ✖ NightwatchAssertError
-   Timed out while waiting for element &lt;#uniform-fileUpload&gt; to be present for 2000 milliseconds. - expected &#34;visible&#34; but got: &#34;not found&#34; (2047ms)
-
-    Error location:
-    D:\sr\New folder (2)\SDET_task\UItest\page-objects\contactPage.js:43
-    –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-     41 |       const absPath = path.resolve(__dirname, `../test-data/${fileName}`);
-     42 |       await b.uploadFile(el.fileUpload, absPath);
-     43 |       await b.waitForElementVisible(el.fileSelected, 2000); 
-     44 |     }
-     45 | 
-    –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-
- NoSuchElementError
-   An error occurred while running .click() command on &lt;#submitMessage&gt;: Timed out while waiting for element &#34;#submitMessage&#34; with &#34;css selector&#34; to be present for 5000 milliseconds.
-    {&#34;value&#34;:null,&#34;status&#34;:0}
-
-    Try fixing by :
-    1. Please inspect the html before the step
-    2. Verify if an element with the mentioned selector is present in the DOM tree
-
-    Error location:
-    D:\sr\New folder (2)\SDET_task\UItest\page-objects\contactPage.js:46
-    –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-     44 |     }
-     45 | 
-     46 |     await b.click(el.sendButton); 
-     47 |     return this;
-     48 |   }
-    –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-
-    </system-err>
   
 
     

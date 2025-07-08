@@ -1,178 +1,145 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuites errors="5"
-            failures="2"
-            tests="1">
+<testsuites errors="0"
+            failures="5"
+            tests="10">
 
   <testsuite name="Contact Form Tests" id="connectTest"
-    errors="5" failures="2" hostname="" package="connectTest" skipped="9"
-    tests="1" time="41.89" timestamp="">
+    errors="0" failures="5" hostname="" package="connectTest" skipped="0"
+    tests="10" time="25.54" timestamp="">
   
-    <testcase name="Valid Contact Form Submission" classname="Contact Form Tests" time="13.95" assertions="2">
+    <testcase name="Valid Contact Form Submission" classname="Contact Form Tests" time="6.107" assertions="4">
 
-      <failure message="page.submitForm(...).verifySuccessMessage is not a function">TypeError: page.submitForm(...).verifySuccessMessage is not a function
-    at DescribeInstance.&lt;anonymous&gt; (D:\sr\New folder (2)\SDET_task\UItest\tests\connectTest.js:15:8)</failure>
+    
+
+    
+
+    
+
+    
+    </testcase>
+  
+    <testcase name="Missing Email - Should Show Error" classname="Contact Form Tests" time="1.965" assertions="4">
+
+    
+
+    
+
+    
+
+    
+    </testcase>
+  
+    <testcase name="Missing Message - Should Show Error" classname="Contact Form Tests" time="1.961" assertions="4">
+
+    
+
+    
+
+    
+
+    
+    </testcase>
+  
+    <testcase name="No Subject Selected - Should Show Error" classname="Contact Form Tests" time="2.453" assertions="4">
+
+    
+
+    
+
+    
+
+    
+    </testcase>
+  
+    <testcase name="File name appears after upload" classname="Contact Form Tests" time="0.8820" assertions="2">
+
+    
+
+    
+    </testcase>
+  
+    <testcase name="Submit empty form and check multiple error messages" classname="Contact Form Tests" time="1.595" assertions="5">
+
+    
+
+    
+
+      <failure message="Failed [ok]: (Expected error message &#34;The message cannot be blank&#34; to appear) - expected &#34;true&#34; but got: &#34;false&#34; (0ms)">    at D:\sr\New folder (2)\SDET_task\UItest\page-objects\contactPage.js:90:27
+    at Array.forEach (&lt;anonymous&gt;)
+    at NightwatchAPI.&lt;anonymous&gt; (D:\sr\New folder (2)\SDET_task\UItest\page-objects\contactPage.js:89:22)</failure>
+
+      <failure message="Failed [ok]: (Expected error message &#34;Please select a subject&#34; to appear) - expected &#34;true&#34; but got: &#34;false&#34; (3ms)">    at D:\sr\New folder (2)\SDET_task\UItest\page-objects\contactPage.js:90:27
+    at Array.forEach (&lt;anonymous&gt;)
+    at NightwatchAPI.&lt;anonymous&gt; (D:\sr\New folder (2)\SDET_task\UItest\page-objects\contactPage.js:89:22)</failure>
+
+    
+    </testcase>
+  
+    <testcase name="Missing Email + Subject" classname="Contact Form Tests" time="1.714" assertions="4">
+
+    
+
+    
+
+      <failure message="Failed [ok]: (Expected error message &#34;Please select a subject&#34; to appear) - expected &#34;true&#34; but got: &#34;false&#34; (1ms)">    at D:\sr\New folder (2)\SDET_task\UItest\page-objects\contactPage.js:90:27
+    at Array.forEach (&lt;anonymous&gt;)
+    at NightwatchAPI.&lt;anonymous&gt; (D:\sr\New folder (2)\SDET_task\UItest\page-objects\contactPage.js:89:22)</failure>
+
+    
+    </testcase>
+  
+    <testcase name="Missing Email + Message" classname="Contact Form Tests" time="1.693" assertions="4">
+
+    
+
+    
+
+      <failure message="Failed [ok]: (Expected error message &#34;The message cannot be blank&#34; to appear) - expected &#34;true&#34; but got: &#34;false&#34; (0ms)">    at D:\sr\New folder (2)\SDET_task\UItest\page-objects\contactPage.js:90:27
+    at Array.forEach (&lt;anonymous&gt;)
+    at NightwatchAPI.&lt;anonymous&gt; (D:\sr\New folder (2)\SDET_task\UItest\page-objects\contactPage.js:89:22)</failure>
+
+    
+    </testcase>
+  
+    <testcase name="Missing Subject + Message" classname="Contact Form Tests" time="2.661" assertions="4">
+
+    
+
+      <failure message="Failed [ok]: (Expected error message &#34;Please select a subject&#34; to appear) - expected &#34;true&#34; but got: &#34;false&#34; (0ms)">    at D:\sr\New folder (2)\SDET_task\UItest\page-objects\contactPage.js:90:27
+    at Array.forEach (&lt;anonymous&gt;)
+    at NightwatchAPI.&lt;anonymous&gt; (D:\sr\New folder (2)\SDET_task\UItest\page-objects\contactPage.js:89:22)</failure>
+
+    
+
+    
+    </testcase>
+  
+    <testcase name="Invalid Email Addresses - Should Show Error" classname="Contact Form Tests" time="4.440" assertions="9">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
 
     
     </testcase>
   
 
   
-    <system-err>
-       NoSuchElementError
-   An error occurred while running .setValue() command on &lt;#email&gt;: Timed out while waiting for element &#34;#email&#34; with &#34;css selector&#34; to be present for 5000 milliseconds.
-    {&#34;value&#34;:null,&#34;status&#34;:0}
-
-    Try fixing by :
-    1. Please inspect the html before the step
-    2. Verify if an element with the mentioned selector is present in the DOM tree
-
-    Error location:
-    D:\sr\New folder (2)\SDET_task\UItest\page-objects\contactPage.js:36
-    –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-     34 |       
-     35 |     };
-     36 |     if (email) await b.setValue(el.emailAddress, email); 
-     37 |     if (orderRef) await b.setValue(el.orderReference, orderRef);
-     38 |     if (message) await b.setValue(el.message, message);
-    –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-
- NoSuchElementError
-   An error occurred while running .setValue() command on &lt;#id_order&gt;: Timed out while waiting for element &#34;#id_order&#34; with &#34;css selector&#34; to be present for 5000 milliseconds.
-    {&#34;value&#34;:null,&#34;status&#34;:0}
-
-    Try fixing by :
-    1. Please inspect the html before the step
-    2. Verify if an element with the mentioned selector is present in the DOM tree
-
-    Error location:
-    D:\sr\New folder (2)\SDET_task\UItest\page-objects\contactPage.js:37
-    –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-     35 |     };
-     36 |     if (email) await b.setValue(el.emailAddress, email);
-     37 |     if (orderRef) await b.setValue(el.orderReference, orderRef); 
-     38 |     if (message) await b.setValue(el.message, message);
-     39 | 
-    –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-
- NoSuchElementError
-   An error occurred while running .setValue() command on &lt;#message&gt;: Timed out while waiting for element &#34;#message&#34; with &#34;css selector&#34; to be present for 5000 milliseconds.
-    {&#34;value&#34;:null,&#34;status&#34;:0}
-
-    Try fixing by :
-    1. Please inspect the html before the step
-    2. Verify if an element with the mentioned selector is present in the DOM tree
-
-    Error location:
-    D:\sr\New folder (2)\SDET_task\UItest\page-objects\contactPage.js:38
-    –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-     36 |     if (email) await b.setValue(el.emailAddress, email);
-     37 |     if (orderRef) await b.setValue(el.orderReference, orderRef);
-     38 |     if (message) await b.setValue(el.message, message); 
-     39 | 
-     40 |     if (fileName) {
-    –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-
- NoSuchElementError
-   An error occurred while running .uploadFile() command on &lt;#fileUpload&gt;: Timed out while waiting for element &#34;#fileUpload&#34; with &#34;css selector&#34; to be present for 5000 milliseconds.
-    {&#34;value&#34;:null,&#34;status&#34;:0}
-
-    Try fixing by :
-    1. Please inspect the html before the step
-    2. Verify if an element with the mentioned selector is present in the DOM tree
-
-    Error location:
-    D:\sr\New folder (2)\SDET_task\UItest\page-objects\contactPage.js:42
-    –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-     40 |     if (fileName) {
-     41 |       const absPath = path.resolve(__dirname, `../test-data/${fileName}`);
-     42 |       await b.uploadFile(el.fileUpload, absPath); 
-     43 |       await b.waitForElementVisible(el.fileSelected, 2000);
-     44 |     }
-    –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-
- ✖ NightwatchAssertError
-   Timed out while waiting for element &lt;#uniform-fileUpload&gt; to be present for 2000 milliseconds. - expected &#34;visible&#34; but got: &#34;not found&#34; (2047ms)
-
-    Error location:
-    D:\sr\New folder (2)\SDET_task\UItest\page-objects\contactPage.js:43
-    –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-     41 |       const absPath = path.resolve(__dirname, `../test-data/${fileName}`);
-     42 |       await b.uploadFile(el.fileUpload, absPath);
-     43 |       await b.waitForElementVisible(el.fileSelected, 2000); 
-     44 |     }
-     45 | 
-    –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-
- NoSuchElementError
-   An error occurred while running .click() command on &lt;#submitMessage&gt;: Timed out while waiting for element &#34;#submitMessage&#34; with &#34;css selector&#34; to be present for 5000 milliseconds.
-    {&#34;value&#34;:null,&#34;status&#34;:0}
-
-    Try fixing by :
-    1. Please inspect the html before the step
-    2. Verify if an element with the mentioned selector is present in the DOM tree
-
-    Error location:
-    D:\sr\New folder (2)\SDET_task\UItest\page-objects\contactPage.js:46
-    –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-     44 |     }
-     45 | 
-     46 |     await b.click(el.sendButton); 
-     47 |     return this;
-     48 |   }
-    –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-
-    </system-err>
-  
 
     
 
-  
-    
-    <testcase
-      name="Missing Email - Should Show Error" classname="Contact Form Tests">
-      <skipped />
-    </testcase>
-    
-    <testcase
-      name="Missing Message - Should Show Error" classname="Contact Form Tests">
-      <skipped />
-    </testcase>
-    
-    <testcase
-      name="No Subject Selected - Should Show Error" classname="Contact Form Tests">
-      <skipped />
-    </testcase>
-    
-    <testcase
-      name="File name appears after upload" classname="Contact Form Tests">
-      <skipped />
-    </testcase>
-    
-    <testcase
-      name="Submit empty form and check multiple error messages" classname="Contact Form Tests">
-      <skipped />
-    </testcase>
-    
-    <testcase
-      name="Missing Email + Subject" classname="Contact Form Tests">
-      <skipped />
-    </testcase>
-    
-    <testcase
-      name="Missing Email + Message" classname="Contact Form Tests">
-      <skipped />
-    </testcase>
-    
-    <testcase
-      name="Missing Subject + Message" classname="Contact Form Tests">
-      <skipped />
-    </testcase>
-    
-    <testcase
-      name="Invalid Email Addresses - Should Show Error" classname="Contact Form Tests">
-      <skipped />
-    </testcase>
-    
   
   </testsuite>
 </testsuites>

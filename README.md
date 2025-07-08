@@ -8,7 +8,7 @@
 This project contains a full stack **automated testing framework** using:
 
 - ✅ **Jest + Supertest** for REST API testing for mock user auth using data-driven 
-- ✅ **Nightwatch.js** End-to-End UI testing for a commercial website (Contact and Search pages) using a data-driven automated testing suite and the Fluent Page Object Model for robust, maintainable validation.
+- ✅ **Nightwatch.js** End-to-End UI testing for a commercial website (Contact and Search pages) using a data-driven automated testing suite and the Page Object Model for robust, maintainable validation.
 
 Perfect for CI/CD integration, modular and data-driven.
 
