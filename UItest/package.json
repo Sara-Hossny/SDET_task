@@ -1,0 +1,11 @@
+{
+  "name": "UItest",
+  "version": "1.0.0",
+  "description": "Test commercial website for buying clothes",
+  "main": "index.js",
+  "scripts": {
+    "test": "nightwatch --config nightwatch.conf.js"
+  },
+  "author": "Sara Hossny",
+  "license": "ISC"
+}

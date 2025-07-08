@@ -1,0 +1,55 @@
+{
+  "validSubmission": {
+    "subjectIndex": "Customer service",
+    "email": "test@example.com",
+    "orderRef": "12345",
+    "message": "This is a valid test message.",
+    "fileName": "testfile.txt"
+  },
+  "missingEmail": {
+    "subjectIndex": "Webmaster",
+    "email": "",
+    "orderRef": "12345",
+    "message": "Missing email test.",
+    "fileName": "testfile.txt"
+  },
+  "missingMessage": {
+    "subjectIndex": "Customer service",
+    "email": "test@example.com",
+    "orderRef": "12345",
+    "message": "",
+    "fileName": "testfile.txt"
+  },
+  "missingSubject": {
+    "subjectIndex": "",
+    "email": "test@example.com",
+    "orderRef": "12345",
+    "message": "No subject test",
+    "fileName": "testfile.txt"
+  },
+  "missingEmailAndSubject": {
+    "email": "",
+    "subjectIndex": "",
+    "orderRef": "12345",
+    "message": "Hello"
+  },
+  "missingEmailAndMessage": {
+    "email": "",
+    "subjectIndex": "Webmaster",
+    "orderRef": "12345",
+    "message": ""
+  },
+  "missingSubjectAndMessage": {
+    "email": "test@example.com",
+    "subjectIndex": "",
+    "orderRef": "12345",
+    "message": ""
+  },
+  "invalidEmails": [
+    "plainaddress",
+    "@no-local.com",
+    "user@",
+    "user@.com",
+    "user@site..com"
+  ]
+}

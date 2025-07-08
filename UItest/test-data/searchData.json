@@ -1,0 +1,8 @@
+{
+  "searchCases": [
+    {
+      "query": "dress",
+      "expected": "dress"
+    }
+  ]
+}
