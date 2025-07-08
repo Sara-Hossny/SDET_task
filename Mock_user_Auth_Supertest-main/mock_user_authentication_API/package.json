@@ -1,0 +1,8 @@
+{
+  "scripts": {
+    "dev": "nodemon ./node_modules/mock-user-auth/bin/www.js"
+  },
+  "dependencies": {
+    "mock-user-auth": "^1.0.15"
+  }
+}

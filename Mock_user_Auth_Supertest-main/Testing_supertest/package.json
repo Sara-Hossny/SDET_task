@@ -1,0 +1,18 @@
+{
+  "name": "testing_supertest",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "Sara Hossny",
+  "type": "commonjs",
+  "main": "test.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "devDependencies": {
+    "jest": "^30.0.4",
+    "jest-html-reporter": "^4.3.0",
+    "jest-stare": "^2.5.2",
+    "supertest": "^7.1.1"
+  }
+}
