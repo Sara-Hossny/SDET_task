@@ -32,6 +32,7 @@ jobs:
             sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list'
             sudo apt-get update
             sudo apt-get install -y google-chrome-stable
+
       - run:
           name: Run Nightwatch tests (continue on failure)
           command: |
@@ -41,42 +42,41 @@ jobs:
           path: UItest/tests_output/nightwatch-html-report
           destination: nightwatch-report
 
+  test-API:
+    executor: node-executor
+    working_directory: ~/project/Mock_user_Auth_Supertest-main
+    environment:
+      JEST_JUNIT_OUTPUT_DIR: ./mock_user_authentication_API/Testing_supertest/test-results/
+    steps:
+      - checkout
 
-test-API:
-  executor: node-executor
-  working_directory: ~/project/Mock_user_Auth_Supertest-main
-  environment:
-    JEST_JUNIT_OUTPUT_DIR: ./mock_user_authentication_API/Testing_supertest/test-results/
-  steps:
-    - checkout
+      - run:
+          name: Install server dependencies
+          working_directory: ~/project/Mock_user_Auth_Supertest-main/mock_user_authentication_API
+          command: npm install
 
-    - run:
-        name: Install server dependencies
-        working_directory: ~/project/Mock_user_Auth_Supertest-main/mock_user_authentication_API
-        command: npm install
+      - run:
+          name: Start server in background
+          working_directory: ~/project/Mock_user_Auth_Supertest-main/mock_user_authentication_API
+          command: |
+            npm run dev 8080
+            sleep 60
+          background: true
 
-    - run:
-        name: Start server in background
-        working_directory: ~/project/Mock_user_Auth_Supertest-main/mock_user_authentication_API
-        command: |
-          npm run dev 8080
-          sleep 60
-        background: true
+      - run:
+          name: Install test dependencies
+          working_directory: ~/project/Mock_user_Auth_Supertest-main/mock_user_authentication_API/Testing_supertest
+          command: npm install
 
-    - run:
-        name: Install test dependencies
-        working_directory: ~/project/Mock_user_Auth_Supertest-main/mock_user_authentication_API/Testing_supertest
-        command: npm install
+      - run:
+          name: Run tests with jest-junit (continue on failure)
+          working_directory: ~/project/Mock_user_Auth_Supertest-main/mock_user_authentication_API/Testing_supertest
+          command: |
+            npm install jest-junit
+            npm run test --ci --runInBand --reporters=default --reporters=jest-junit || true
 
-    - run:
-        name: Run tests with jest-junit (continue on failure)
-        working_directory: ~/project/Mock_user_Auth_Supertest-main/mock_user_authentication_API/Testing_supertest
-        command: |
-          npm install jest-junit
-          npm run test --ci --runInBand --reporters=default --reporters=jest-junit || true
-
-    - store_test_results:
-        path: mock_user_authentication_API/Testing_supertest/test-results/
+      - store_test_results:
+          path: mock_user_authentication_API/Testing_supertest/test-results/
 
 workflows:
   build-and-test:
