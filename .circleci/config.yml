@@ -48,7 +48,8 @@ jobs:
     environment:
       JEST_JUNIT_OUTPUT_DIR: ./mock_user_authentication_API/Testing_supertest/test-results/
     steps:
-      - checkout
+      - checkout:
+        path: ~/project
 
       - run:
           name: Install server dependencies
@@ -57,7 +58,7 @@ jobs:
 
       - run:
           name: Start server in background
-          working_directory: ~/project/Mock_user_Auth_Supertest-main/mock_user_authentication_API
+          working_directory: ~/project/Mock_user_Auth_Supertest-main
           command: |
             npm run dev 8080
             sleep 60
@@ -65,12 +66,12 @@ jobs:
 
       - run:
           name: Install test dependencies
-          working_directory: ~/project/Mock_user_Auth_Supertest-main/mock_user_authentication_API/Testing_supertest
+          working_directory: ~/project/Mock_user_Auth_Supertest-main/Testing_supertest
           command: npm install
 
       - run:
           name: Run tests with jest-junit (continue on failure)
-          working_directory: ~/project/Mock_user_Auth_Supertest-main/mock_user_authentication_API/Testing_supertest
+          working_directory: ~/project/Mock_user_Auth_Supertest-main/Testing_supertest
           command: |
             npm install jest-junit
             npm run test --ci --runInBand --reporters=default --reporters=jest-junit || true
