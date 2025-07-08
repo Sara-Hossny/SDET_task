@@ -4,7 +4,6 @@
 ![jest](https://img.shields.io/badge/tested%20with-jest-99424f?style=for-the-badge&logo=jest)
 ![Supertest](https://img.shields.io/badge/tested%20with-supertest-blue?style=for-the-badge)
 ![Nightwatch](https://img.shields.io/badge/tested%20with-nightwatch-yellow?style=for-the-badge&logo=chrome)
-![License](https://img.shields.io/badge/license-MIT-brightgreen?style=for-the-badge)
 
 This project contains a full stack **automated testing framework** using:
 
