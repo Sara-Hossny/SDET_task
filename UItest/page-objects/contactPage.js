@@ -56,7 +56,7 @@ class ContactPage {
     await b.waitForElementVisible(el.fileSelected, 2000);
 
     await b.getText(el.fileSelected, function (result) {
-      b.assert.ok(
+      b.verify.ok(
         result.value.toLowerCase().includes(fileName.toLowerCase()),
         `Expected uploaded file name to appear, got "${result.value}"`
       );
