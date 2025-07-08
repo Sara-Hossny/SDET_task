@@ -35,7 +35,6 @@ jobs:
       JEST_JUNIT_OUTPUT_DIR: ./Testing_supertest/test-results/
     steps:
       - checkout
-
       - run:
           name: Install server dependencies
           working_directory: mock_user_authentication_API
