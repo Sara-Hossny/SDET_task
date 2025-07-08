@@ -74,10 +74,8 @@ jobs:
             npm install jest-junit
             npm run test --ci --runInBand --reporters=default --reporters=jest-junit || true
 
-      - store_test_results:
-          path: mock_user_authentication_API/Testing_supertest/reports/
       - store_artifacts:
-          path: ~/project/mock_user_authentication_API/Testing_supertest/reports/test-report.html
+          path: ~/project/Mock_user_Auth_Supertest-main/mock_user_authentication_API/Testing_supertest/reports/test-report.html
           destination: test-report.html
 
 
