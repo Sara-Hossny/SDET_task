@@ -49,7 +49,7 @@ jobs:
       JEST_JUNIT_OUTPUT_DIR: ./mock_user_authentication_API/Testing_supertest/test-results/
     steps:
       - checkout:
-        path: ~/project
+          path: ~/project
 
       - run:
           name: Install server dependencies
@@ -58,7 +58,7 @@ jobs:
 
       - run:
           name: Start server in background
-          working_directory: ~/project/Mock_user_Auth_Supertest-main
+          working_directory: ~/project/Mock_user_Auth_Supertest-main/mock_user_authentication_API
           command: |
             npm run dev 8080
             sleep 60
@@ -78,6 +78,7 @@ jobs:
 
       - store_test_results:
           path: mock_user_authentication_API/Testing_supertest/test-results/
+
 
 workflows:
   build-and-test:
