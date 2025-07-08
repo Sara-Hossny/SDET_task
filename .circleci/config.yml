@@ -75,7 +75,7 @@ jobs:
             npm run test --ci --runInBand --reporters=default --reporters=jest-junit || true
 
       - store_artifacts:
-          path: ~/project/Mock_user_Auth_Supertest-main/mock_user_authentication_API/Testing_supertest/reports/test-report.html
+          path: ~/project/Mock_user_Auth_Supertest-main/Testing_supertest/reports/test-report.html
           destination: test-report.html
 
 
