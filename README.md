@@ -1,6 +1,6 @@
 
 # 🧪 Full Stack Automated Testing Project
-[![CircleCI](https://circleci.com/gh/Sara-Hossny/SDET_task.svg?style=svg)](https://circleci.com/gh/Sara-Hossny/SDET_task)
+[![CircleCI](https://dl.circleci.com/status-badge/img/circleci/W3Ru6CVv8mYHTc4JPsDNqZ/Noi6edEbbpfwPQxcTm59v4/tree/main.svg?style=svg&circle-token=CCIPRJ_6TqgDWPfebv6Mrny2eSqoi_88465e7c5182f7258d78ef6e3bb9b29f0d58fdae)](https://dl.circleci.com/status-badge/redirect/circleci/W3Ru6CVv8mYHTc4JPsDNqZ/Noi6edEbbpfwPQxcTm59v4/tree/main)
 ![jest](https://img.shields.io/badge/tested%20with-jest-99424f?style=for-the-badge&logo=jest)
 ![Supertest](https://img.shields.io/badge/tested%20with-supertest-blue?style=for-the-badge)
 ![Nightwatch](https://img.shields.io/badge/tested%20with-nightwatch-yellow?style=for-the-badge&logo=chrome)
