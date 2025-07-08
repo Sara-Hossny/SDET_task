@@ -1,5 +1,5 @@
 
-# 🧪 Full Stack Automated Testing Project
+# 🧪 Automated Testing Project
 [![CircleCI](https://dl.circleci.com/status-badge/img/circleci/W3Ru6CVv8mYHTc4JPsDNqZ/Noi6edEbbpfwPQxcTm59v4/tree/main.svg?style=svg&circle-token=CCIPRJ_6TqgDWPfebv6Mrny2eSqoi_88465e7c5182f7258d78ef6e3bb9b29f0d58fdae)](https://dl.circleci.com/status-badge/redirect/circleci/W3Ru6CVv8mYHTc4JPsDNqZ/Noi6edEbbpfwPQxcTm59v4/tree/main)
 ![jest](https://img.shields.io/badge/tested%20with-jest-99424f?style=for-the-badge&logo=jest)
 ![Supertest](https://img.shields.io/badge/tested%20with-supertest-blue?style=for-the-badge)
@@ -7,8 +7,8 @@
 
 This project contains a full stack **automated testing framework** using:
 
-- ✅ **Jest + Supertest** for REST API testing for mock user auth
-- ✅ **Nightwatch.js** for End-to-End UI testing for commerical website (contact page and search)
+- ✅ **Jest + Supertest** for REST API testing for mock user auth using data-driven 
+- ✅ **Nightwatch.js** End-to-End UI testing for a commercial website (Contact and Search pages) using a data-driven automated testing suite and the Fluent Page Object Model for robust, maintainable validation.
 
 Perfect for CI/CD integration, modular and data-driven.
 
