@@ -8,7 +8,7 @@ module.exports = {
     password: "user123"
   },
 
-  // Login Payload (based on user created above)
+  // Login Payload
   loginUser: function () {
     return {
       email: this.user.email,
@@ -26,5 +26,11 @@ module.exports = {
   // Admin key for deleting all users
   adminKey: {
     key_admin: "keyadmin123"
-  }
+  },
+  invalidUserWithoutPassword: {
+    email: `new_test${timestamp}@mail.com`
+  },
+    invalidUserWithoutEmail: {
+    password: "newpassword123"
+  },
 };

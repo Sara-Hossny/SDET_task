@@ -68,4 +68,45 @@ describe('User API Flow (with modular test data and response expectations)', () 
     expect(res.statusCode).toBe(200);
     expect(res.body).toMatchObject(expected.deleteAllUsersResponse);
   });
+  
+  it('Delete User - missing token should fail', async () => {
+    const res = await request(BASE_URL)
+      .delete(endpoints.deleteUser); // no token
+
+    expect(res.statusCode).toBe(403);
+  });
+  it('Get User Profile - missing token should fail', async () => {
+    const res = await request(BASE_URL)
+      .get(endpoints.getUser); 
+
+    expect(res.statusCode).toBe(403);
+  });
+  it('Create User - missing email should fail', async () => {
+    const res = await request(BASE_URL)
+      .post(endpoints.createUser)
+      .send(testData.invalidUserWithoutEmail);
+    expect(res.statusCode).toBe(400);
+  });
+  it('Create User - missing Password should fail', async () => {
+    const res = await request(BASE_URL)
+      .post(endpoints.createUser)
+      .send( testData.invalidUserWithoutPassword );
+    expect(res.statusCode).toBe(400);
+  });
+  it('Create User - empty should fail', async () => {
+    const res = await request(BASE_URL)
+      .post(endpoints.createUser)
+      .send( {} );
+    expect(res.statusCode).toBe(400);
+  });
+  
+  it('Delete All Users (Admin) - missing adminKey should fail', async () => {
+  const res = await request(BASE_URL)
+    .delete(endpoints.deleteAllUsers)
+    .send({}); // no adminKey sent
+
+  expect(res.statusCode).toBe(403); 
+});
+
+
 });
