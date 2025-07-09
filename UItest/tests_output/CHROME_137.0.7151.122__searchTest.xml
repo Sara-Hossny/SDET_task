@@ -5,9 +5,9 @@
 
   <testsuite name="Search Feature" id="searchTest"
     errors="0" failures="2" hostname="" package="searchTest" skipped="0"
-    tests="1" time="8.187" timestamp="">
+    tests="1" time="7.621" timestamp="">
   
-    <testcase name="Search for &#34;dress&#34; and verify result contains &#34;dress&#34;" classname="Search Feature" time="8.115" assertions="9">
+    <testcase name="Search for &#34;dress&#34; and verify result contains &#34;dress&#34;" classname="Search Feature" time="7.484" assertions="9">
 
     
 
@@ -21,10 +21,10 @@
 
     
 
-      <failure message="Failed [ok]: (Product 6 should contain &#34;dress&#34; (case-insensitive). Found: &#34;Faded Short Sleeves T-shirt&#34;) - expected &#34;true&#34; but got: &#34;false&#34; (9ms)">    at HomePage.verifyProductName (D:\sr\New folder (2)\SDET_task\UItest\page-objects\homePage.js:46:14)
+      <failure message="Failed [ok]: (Product 6 should contain &#34;dress&#34; (case-insensitive). Found: &#34;Faded Short Sleeves T-shirt&#34;) - expected &#34;true&#34; but got: &#34;false&#34; (1ms)">    at HomePage.verifyProductName (D:\sr\New folder (2)\SDET_task\UItest\page-objects\homePage.js:46:14)
     at async DescribeInstance.&lt;anonymous&gt; (D:\sr\New folder (2)\SDET_task\UItest\tests\searchTest.js:16:7)</failure>
 
-      <failure message="Failed [ok]: (Product 7 should contain &#34;dress&#34; (case-insensitive). Found: &#34;Blouse&#34;) - expected &#34;true&#34; but got: &#34;false&#34; (4ms)">    at HomePage.verifyProductName (D:\sr\New folder (2)\SDET_task\UItest\page-objects\homePage.js:46:14)
+      <failure message="Failed [ok]: (Product 7 should contain &#34;dress&#34; (case-insensitive). Found: &#34;Blouse&#34;) - expected &#34;true&#34; but got: &#34;false&#34; (0ms)">    at HomePage.verifyProductName (D:\sr\New folder (2)\SDET_task\UItest\page-objects\homePage.js:46:14)
     at async DescribeInstance.&lt;anonymous&gt; (D:\sr\New folder (2)\SDET_task\UItest\tests\searchTest.js:16:7)</failure>
 
     

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <testsuites errors="0"
             failures="5"
-            tests="10">
+            tests="13">
 
   <testsuite name="Contact Form Tests" id="connectTest"
     errors="0" failures="5" hostname="" package="connectTest" skipped="0"
-    tests="10" time="25.54" timestamp="">
+    tests="13" time="30.38" timestamp="">
   
-    <testcase name="Valid Contact Form Submission" classname="Contact Form Tests" time="6.107" assertions="4">
+    <testcase name="Valid Contact Form Submission" classname="Contact Form Tests" time="6.167" assertions="4">
 
     
 
@@ -18,7 +18,7 @@
     
     </testcase>
   
-    <testcase name="Missing Email - Should Show Error" classname="Contact Form Tests" time="1.965" assertions="4">
+    <testcase name="Missing Email - Should Show Error" classname="Contact Form Tests" time="2.467" assertions="4">
 
     
 
@@ -29,7 +29,7 @@
     
     </testcase>
   
-    <testcase name="Missing Message - Should Show Error" classname="Contact Form Tests" time="1.961" assertions="4">
+    <testcase name="Missing Message - Should Show Error" classname="Contact Form Tests" time="1.822" assertions="4">
 
     
 
@@ -40,7 +40,7 @@
     
     </testcase>
   
-    <testcase name="No Subject Selected - Should Show Error" classname="Contact Form Tests" time="2.453" assertions="4">
+    <testcase name="No Subject Selected - Should Show Error" classname="Contact Form Tests" time="1.894" assertions="4">
 
     
 
@@ -51,14 +51,14 @@
     
     </testcase>
   
-    <testcase name="File name appears after upload" classname="Contact Form Tests" time="0.8820" assertions="2">
+    <testcase name="File name appears after upload" classname="Contact Form Tests" time="0.8610" assertions="2">
 
     
 
     
     </testcase>
   
-    <testcase name="Submit empty form and check multiple error messages" classname="Contact Form Tests" time="1.595" assertions="5">
+    <testcase name="Submit empty form and check multiple error messages" classname="Contact Form Tests" time="1.468" assertions="5">
 
     
 
@@ -75,33 +75,39 @@
     
     </testcase>
   
-    <testcase name="Missing Email + Subject" classname="Contact Form Tests" time="1.714" assertions="4">
+    <testcase name="Missing Email + Subject" classname="Contact Form Tests" time="1.706" assertions="5">
 
     
 
     
 
-      <failure message="Failed [ok]: (Expected error message &#34;Please select a subject&#34; to appear) - expected &#34;true&#34; but got: &#34;false&#34; (1ms)">    at D:\sr\New folder (2)\SDET_task\UItest\page-objects\contactPage.js:90:27
+    
+
+      <failure message="Failed [ok]: (Expected error message &#34;Please select a subject&#34; to appear) - expected &#34;true&#34; but got: &#34;false&#34; (0ms)">    at D:\sr\New folder (2)\SDET_task\UItest\page-objects\contactPage.js:90:27
     at Array.forEach (&lt;anonymous&gt;)
     at NightwatchAPI.&lt;anonymous&gt; (D:\sr\New folder (2)\SDET_task\UItest\page-objects\contactPage.js:89:22)</failure>
 
     
     </testcase>
   
-    <testcase name="Missing Email + Message" classname="Contact Form Tests" time="1.693" assertions="4">
+    <testcase name="Missing Email + Message" classname="Contact Form Tests" time="1.748" assertions="5">
 
     
 
     
 
-      <failure message="Failed [ok]: (Expected error message &#34;The message cannot be blank&#34; to appear) - expected &#34;true&#34; but got: &#34;false&#34; (0ms)">    at D:\sr\New folder (2)\SDET_task\UItest\page-objects\contactPage.js:90:27
+    
+
+      <failure message="Failed [ok]: (Expected error message &#34;The message cannot be blank&#34; to appear) - expected &#34;true&#34; but got: &#34;false&#34; (1ms)">    at D:\sr\New folder (2)\SDET_task\UItest\page-objects\contactPage.js:90:27
     at Array.forEach (&lt;anonymous&gt;)
     at NightwatchAPI.&lt;anonymous&gt; (D:\sr\New folder (2)\SDET_task\UItest\page-objects\contactPage.js:89:22)</failure>
 
     
     </testcase>
   
-    <testcase name="Missing Subject + Message" classname="Contact Form Tests" time="2.661" assertions="4">
+    <testcase name="Missing Subject + Message" classname="Contact Form Tests" time="1.664" assertions="5">
+
+    
 
     
 
@@ -114,7 +120,7 @@
     
     </testcase>
   
-    <testcase name="Invalid Email Addresses - Should Show Error" classname="Contact Form Tests" time="4.440" assertions="9">
+    <testcase name="Invalid Email Addresses - Should Show Error" classname="Contact Form Tests" time="4.649" assertions="12">
 
     
 
@@ -127,6 +133,41 @@
     
 
     
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    </testcase>
+  
+    <testcase name="Valid submission without Order Reference - should succeed" classname="Contact Form Tests" time="1.995" assertions="4">
+
+    
+
+    
+
+    
+
+    
+    </testcase>
+  
+    <testcase name="Valid submission without File Upload - should succeed" classname="Contact Form Tests" time="1.985" assertions="3">
+
+    
+
+    
+
+    
+    </testcase>
+  
+    <testcase name="Valid submission without Order Reference and File Upload - should succeed" classname="Contact Form Tests" time="1.882" assertions="3">
 
     
 
