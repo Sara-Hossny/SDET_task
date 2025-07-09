@@ -31,38 +31,63 @@
     "email": "",
     "subjectIndex": "",
     "orderRef": "12345",
-    "message": "Hello"
+    "message": "Hello",
+    "fileName": "testfile.txt"
   },
   "missingEmailAndMessage": {
     "email": "",
     "subjectIndex": "Webmaster",
     "orderRef": "12345",
-    "message": ""
+    "message": "",
+    "fileName": "testfile.txt"
   },
   "missingSubjectAndMessage": {
     "email": "test@example.com",
     "subjectIndex": "",
     "orderRef": "12345",
-    "message": ""
+    "message": "",
+    "fileName": "testfile.txt"
   },
     "invalidEmailSubmissions": [
     {
       "subjectIndex": "2",
       "email": "plainaddress",
       "orderRef": "1001",
-      "message": "Testing invalid email format"
+      "message": "Testing invalid email format",
+      "fileName": "testfile.txt"
+
     },
     {
       "subjectIndex": "2",
       "email": "@no-local-part.com",
       "orderRef": "1002",
-      "message": "Another invalid email"
+      "message": "Another invalid email",
+      "fileName": "testfile.txt"
     },
     {
       "subjectIndex": "2",
       "email": "user@.invalid.com",
       "orderRef": "1003",
-      "message": "Invalid domain"
+      "message": "Invalid domain",
+      "fileName": "testfile.txt"
     }
-  ]
+  ],
+  "noOrderRefAndFileUpload": {
+  "subjectIndex": "Customer service",
+  "email": "test@example.com",
+  "message": "This is a valid test message."
+}
+,"noFileUpload": {
+  "subjectIndex": "Customer service",
+  "email": "test@example.com",
+  "orderRef": "12345",
+  "message": "This is a valid test message."
+}
+,"noOrderRef": {
+  "subjectIndex": "Customer service",
+  "email": "test@example.com",
+  "message": "This is a valid test message.",
+  "fileName": "testfile.txt"
+}
+
 }

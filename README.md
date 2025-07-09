@@ -24,6 +24,7 @@ SDET_TASK/
 │   ├── mock_user_authentication_API/
 │   │   ├── package.json          # API app
 │   │   └── package-lock.json
+│   ├── MockBugReport.docx       #bug tickets for the founded bugs
 │   └── Testing_supertest/
 │       ├── Config/
 │       │   └── config.js         # API endpoints and base URL
@@ -44,6 +45,8 @@ SDET_TASK/
 │   ├── nightwatch.conf.js        # Nightwatch config
 │   ├── package.json
 │   └── package-lock.json
+│   └── UIBugReport.docx          #bug tickets for the founded bugs
+│   └── UItestcases.xlsx          # document for the testcases 
 └── .gitignore
 ```
 

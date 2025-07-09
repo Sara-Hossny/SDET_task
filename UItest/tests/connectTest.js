@@ -72,6 +72,20 @@ describe('Contact Form Tests', function () {
     await page.verifyErrorMessage('Invalid email address');
   }
 });
+it('Valid submission without Order Reference - should succeed', async function () {
+  await page.submitForm(contactData.noOrderRef);
+  await page.verifySuccessMessage();
+});
+
+it('Valid submission without File Upload - should succeed', async function () {
+  await page.submitForm(contactData.noFileUpload);
+  await page.verifySuccessMessage();
+});
+
+it('Valid submission without Order Reference and File Upload - should succeed', async function () {
+  await page.submitForm(contactData.noOrderRefAndFileUpload);
+  await page.verifySuccessMessage();
+});
 
   after(function (browser) {
     browser.end();
